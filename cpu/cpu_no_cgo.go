@@ -2,8 +2,7 @@
 // Use of this source code is governed under the Apache License, Version 2.0
 // that can be found in the LICENSE file.
 
-// +build !darwin
-// +build !linux
+// +build !cgo
 // +build !windows
 
 package cpu
@@ -11,5 +10,5 @@ package cpu
 import "errors"
 
 func setHighPriority() error {
-	return errors.New("cpu: high priority is not supported on this OS")
+	return errors.New("cpu: needs cgo")
 }
